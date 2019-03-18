@@ -1,0 +1,6 @@
+name: URPBot
+description: MagicalPark Discord Bot
+version: 0.0.1-MAIN
+api-version: 1.13
+main: me.siebsie23.urpbot.main.Main
+commands:
