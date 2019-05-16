@@ -25,7 +25,8 @@ public class DiscordBot {
             api.addListener(new TPSCommand(plugin));
             api.addListener(new ClearCommand(plugin));
             api.addListener(new PingCommand(plugin));
-
+            api.addListener(new KickCommand(plugin));
+            api.addListener(new SendCommand(plugin));
         }catch(Exception e) {
             plugin.getLogger().log(Level.INFO, "Failed to start URPBot! Token may be incorrect.");
             plugin.getServer().getPluginManager().disablePlugin(plugin);
