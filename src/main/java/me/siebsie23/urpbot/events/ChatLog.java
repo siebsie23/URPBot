@@ -1,7 +1,6 @@
 package me.siebsie23.urpbot.events;
 
 import me.siebsie23.urpbot.api.DiscordBot;
-import me.siebsie23.urpbot.main.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -12,12 +11,7 @@ import org.javacord.api.listener.message.MessageCreateListener;
 
 public class ChatLog implements Listener, MessageCreateListener {
 
-    private Main plugin;
     private String channelId = "579216274588958730";
-
-    public ChatLog(Main plugin) {
-        this.plugin = plugin;
-    }
 
     @EventHandler
     public void onChat(AsyncPlayerChatEvent e) {

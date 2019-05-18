@@ -13,7 +13,7 @@ public class Main extends JavaPlugin {
         saveDefaultConfig();
         String token = getConfig().getString("token");
         discordBot = new DiscordBot(this, token);
-        getServer().getPluginManager().registerEvents(new ChatLog(this), this);
+        getServer().getPluginManager().registerEvents(new ChatLog(), this);
     }
 
     @Override
