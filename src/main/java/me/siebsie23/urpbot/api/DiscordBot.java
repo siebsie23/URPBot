@@ -1,6 +1,7 @@
 package me.siebsie23.urpbot.api;
 
 import me.siebsie23.urpbot.discordcommands.*;
+import me.siebsie23.urpbot.events.ChatLog;
 import me.siebsie23.urpbot.main.Main;
 import org.bukkit.Bukkit;
 import org.javacord.api.DiscordApi;
@@ -27,6 +28,7 @@ public class DiscordBot {
             api.addListener(new PingCommand(plugin));
             api.addListener(new KickCommand(plugin));
             api.addListener(new SendCommand(plugin));
+            api.addListener(new ChatLog(plugin));
         }catch(Exception e) {
             plugin.getLogger().log(Level.INFO, "Failed to start URPBot! Token may be incorrect.");
             plugin.getServer().getPluginManager().disablePlugin(plugin);
