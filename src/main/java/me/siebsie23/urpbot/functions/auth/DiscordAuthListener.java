@@ -1,6 +1,7 @@
 package me.siebsie23.urpbot.functions.auth;
 
 import me.siebsie23.urpbot.main.Main;
+import me.siebsie23.urpbot.utils.PlayerIP;
 import org.bukkit.entity.Player;
 import org.javacord.api.event.message.MessageCreateEvent;
 import org.javacord.api.listener.message.MessageCreateListener;
@@ -32,6 +33,7 @@ public class DiscordAuthListener implements MessageCreateListener {
                 }
                 event.getMessage().getChannel().sendMessage("Your account has been verified successfully!");
                 plugin.auth.code.remove(player);
+                plugin.auth.authyml.saveIp(player, PlayerIP.getIP(player));
                 player.sendMessage("[URPBot] Your account has been registered successfully!");
             }
         }

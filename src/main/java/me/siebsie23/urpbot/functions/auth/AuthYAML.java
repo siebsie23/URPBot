@@ -38,7 +38,6 @@ public class AuthYAML {
         String oldIp = yml.getString("info.lastip");
         if(!currentIp.equalsIgnoreCase(oldIp)) {
             player.sendMessage("[URPBot] Your logging in from a different ip.");
-            saveIp(player, currentIp);
             authenticate(player);
         }else {
             player.sendMessage("[URPBot] Your logging in from a known ip, nothing to worry about!");
@@ -67,7 +66,7 @@ public class AuthYAML {
         }
     }
 
-    private void saveIp(Player player, String ip) {
+    public void saveIp(Player player, String ip) {
         File file = new File("plugins/URPBot/auth/" + player.getUniqueId() + ".yml");
         if(!file.exists())
             return;
