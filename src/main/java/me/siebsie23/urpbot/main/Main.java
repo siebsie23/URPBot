@@ -1,7 +1,6 @@
 package me.siebsie23.urpbot.main;
 
 import me.siebsie23.urpbot.api.DiscordBot;
-import me.siebsie23.urpbot.events.ChatLog;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
@@ -11,9 +10,14 @@ public class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         saveDefaultConfig();
-        String token = getConfig().getString("token");
+        String token;
+        if(getConfig().getBoolean("devmode")) {
+            getServer().getLogger().info("Starting URPBot in development mode...");
+            token = "NTgxMDE4ODM2MDM2NDg1MTMw.XOZKIg.8_yfmmzOEsBAFEwLXEejtQR5aXo";
+        }else {
+            token = getConfig().getString("token");
+        }
         discordBot = new DiscordBot(this, token);
-        getServer().getPluginManager().registerEvents(new ChatLog(), this);
     }
 
     @Override

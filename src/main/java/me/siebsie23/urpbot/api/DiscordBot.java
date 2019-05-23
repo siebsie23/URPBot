@@ -30,7 +30,7 @@ public class DiscordBot {
             api.addListener(new PingCommand(plugin));
             api.addListener(new KickCommand(plugin));
             api.addListener(new SendCommand(plugin));
-            api.addListener(new ChatLog());
+            api.addListener(new ChatLog(plugin));
             api.addListener(new FlipCoinCommand(plugin));
             api.addListener(new RockPaperScissorsCommand(plugin));
         }catch(Exception e) {
