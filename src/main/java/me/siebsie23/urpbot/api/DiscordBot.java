@@ -4,6 +4,7 @@ import me.siebsie23.urpbot.discordcommands.*;
 import me.siebsie23.urpbot.discordcommands.fun.FlipCoinCommand;
 import me.siebsie23.urpbot.discordcommands.fun.RockPaperScissorsCommand;
 import me.siebsie23.urpbot.events.ChatLog;
+import me.siebsie23.urpbot.functions.auth.DiscordAuthListener;
 import me.siebsie23.urpbot.main.Main;
 import org.bukkit.Bukkit;
 import org.javacord.api.DiscordApi;
@@ -33,6 +34,7 @@ public class DiscordBot {
             api.addListener(new ChatLog(plugin));
             api.addListener(new FlipCoinCommand(plugin));
             api.addListener(new RockPaperScissorsCommand(plugin));
+            api.addListener(new DiscordAuthListener(plugin));
         }catch(Exception e) {
             plugin.getLogger().log(Level.INFO, "Failed to start URPBot! Token may be incorrect.");
             plugin.getServer().getPluginManager().disablePlugin(plugin);
