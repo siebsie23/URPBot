@@ -16,6 +16,7 @@ public class Main extends JavaPlugin {
         String token;
         if(getConfig().getBoolean("devmode")) {
             getServer().getLogger().info("Starting URPBot in development mode...");
+            // Token is no longer active
             token = "NTgxMDE4ODM2MDM2NDg1MTMw.XOZKIg.8_yfmmzOEsBAFEwLXEejtQR5aXo";
         }else {
             token = getConfig().getString("token");
